@@ -3,17 +3,18 @@
 #include "Square.h"
 #include "Morpion.h"
 #include "Player.h"
+#include "IA.h"
 
 class MyControlEngine:public ControlEngine {
 
 private:
 	Morpion *morpion_;
-	Player *player1_;
-	Player *player2_;
+	Player *player_;
+	IA *ia_;
 public:
 
-	MyControlEngine(Morpion *morpion, Player *player1, Player *player2) :
-	morpion_(morpion),player1_(player1),player2_(player2){}
+	MyControlEngine(Morpion *morpion, Player *player, IA *ia) :
+	morpion_(morpion),player_(player),ia_(ia){}
     
     virtual void MouseCallback(int button, int state, int x, int y) ;
 };

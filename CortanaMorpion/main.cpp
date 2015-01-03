@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 #include "Engine.h"
 #include "MyGraphicEngine.h"
@@ -8,24 +9,25 @@
 #include "Morpion.h"
 #include "Constants.h"
 #include "Player.h"
+#include "IARandom.h"
 
 int main(int argc, char * argv[])
 {
-	Engine e(argc, argv, Constans::WINDOW_WIDTH, Constans::WINDOW_HEIGHT, "Cortana");
+	Engine e(argc, argv, Constants::WINDOW_WIDTH, Constants::WINDOW_HEIGHT, "Cortana");
 
-	Morpion morpion_(3);
-	Player player1_("croix", false, true);
-	Player player2_("carre", false, false);
-	if (player1_.playerFirst()){
-		player1_.setReadyToPlay(true);
-	}
-	else{
-		player2_.setReadyToPlay(true);
-	}
+	srand(time(NULL));
+
+	Morpion morpion_(Constants::TAILLE_MORPION);
+	morpion_.init();
+	//initialiation du morpion
+
+	Player player_(Constants::CROIX);
+	IARandom ia_(Constants::ROND, &morpion_);
 	
-	GraphicEngine * ge = new MyGraphicEngine(&morpion_,&player1_,&player2_);
-	GameEngine * gme = new MyGameEngine(&morpion_,&player1_,&player2_);
-	ControlEngine * ce = new MyControlEngine(&morpion_,&player1_,&player2_);
+	morpion_.setCurrentPlayer(Constants::PLAYER);
+	GraphicEngine * ge = new MyGraphicEngine(&morpion_,&player_,&ia_);
+	GameEngine * gme = new MyGameEngine(&morpion_, &player_, &ia_);
+	ControlEngine * ce = new MyControlEngine(&morpion_, &player_, &ia_);
 	
 	e.setGraphicEngine(ge);
 	e.setGameEngine(gme);

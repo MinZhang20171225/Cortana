@@ -1,6 +1,6 @@
 #pragma once
 #include "GraphicPrimitives.h"
-
+#include "Constants.h"
 class Square
 {
 
@@ -8,8 +8,8 @@ private:
 	float posX_, posY_;
 	float side_;
 	float red_, green_, blue_;
-	std::string forme_;
 	int cptClick_;
+	int forme_;
 
 public:
 	Square(	float x, float y, float side,
@@ -20,7 +20,7 @@ public:
 
 	int getCptClick();
 	void incCptClick();
-	void setForme(std::string forme);
+	void setForme(int forme);
 	float getX();
 	float getY();
 	float getSide();

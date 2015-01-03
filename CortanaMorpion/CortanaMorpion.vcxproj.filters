@@ -48,11 +48,17 @@
     <ClCompile Include="Morpion.cpp">
       <Filter>Fichiers sources\Plateau</Filter>
     </ClCompile>
-    <ClCompile Include="Square.cpp">
-      <Filter>Fichiers sources\Plateau</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Fichiers sources\Joueur</Filter>
+    </ClCompile>
+    <ClCompile Include="IA.cpp">
+      <Filter>Fichiers sources\Joueur</Filter>
+    </ClCompile>
+    <ClCompile Include="IARandom.cpp">
+      <Filter>Fichiers sources\Joueur</Filter>
+    </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Fichiers sources\Plateau</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +81,12 @@
       <Filter>Fichiers d%27en-tête\Plateau</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Fichiers d%27en-tête\Joueur</Filter>
+    </ClInclude>
+    <ClInclude Include="IA.h">
+      <Filter>Fichiers d%27en-tête\Joueur</Filter>
+    </ClInclude>
+    <ClInclude Include="IARandom.h">
       <Filter>Fichiers d%27en-tête\Joueur</Filter>
     </ClInclude>
   </ItemGroup>

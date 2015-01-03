@@ -1,6 +1,11 @@
 #include "Morpion.h"
 
-Morpion::Morpion(int size) : size_(size), squareSize_(2.0f/size)
+Morpion::Morpion(const int size) : size_(size), squareSize_(2.0f / size), nbPions_(0)
+{}
+
+Morpion::~Morpion(){}
+
+void Morpion::init()
 {
 	for (int ligne = 0; ligne < size_; ligne++)
 	{
@@ -15,8 +20,5 @@ Morpion::Morpion(int size) : size_(size), squareSize_(2.0f/size)
 				0.0f,
 				0.0f));
 		}
-
 	}
 }
-
-Morpion::~Morpion(){}
